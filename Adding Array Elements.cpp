@@ -1,0 +1,23 @@
+class Solution{
+  public:
+    int minOperations(int arr[], int n, int k) {
+        // code here
+           priority_queue<int,vector<int>,greater<int>> min_heap;
+       int count=0;
+       for(int i=0;i<n;i++)
+       {
+           min_heap.push(arr[i]);
+       }
+       while(min_heap.top() < k && !min_heap.empty())
+       {
+           int n1 = min_heap.top();
+           min_heap.pop();
+           int n2 = min_heap.top();
+           min_heap.pop();
+           min_heap.push(n1+n2);
+           count++;
+       }
+       return count;
+   }
+    
+};
