@@ -14,6 +14,7 @@ class Solution{
 		     if(S.find(i)==S.end())
 		     return false;
 		 }
+		return true;
 	}
 
 
